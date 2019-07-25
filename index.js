@@ -5,6 +5,10 @@ const ec = require('elliptic').ec('secp256k1');
 
 var seed = 'xprvseedstring......'
 
+/*
+* mnemonic seed (12/24 words):
+* var seed = require('bip32').fromSeed(require('bip39').mnemonicToSeedSync('basket melody test your phrase here etc')).toBase58()
+*/
 
 function getAddress(seed, derivepath) {
 	let key = new bitcore.HDPrivateKey(seed);
